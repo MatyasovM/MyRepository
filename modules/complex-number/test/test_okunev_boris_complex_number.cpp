@@ -1,10 +1,10 @@
-// Copyright 2018 Okunev Boris
+// Copyright 2018 Matyasov Mixail
 
 #include <gtest/gtest.h>
 
 #include "include/complex_number.h"
 
-TEST(Okunev_Boris_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -17,7 +17,7 @@ TEST(Okunev_Boris_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
     EXPECT_TRUE(z == z1);
 }
 
-TEST(Okunev_Boris_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -33,7 +33,7 @@ TEST(Okunev_Boris_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
     EXPECT_FALSE(z == z1);
 }
 
-TEST(Okunev_Boris_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
+TEST(Matyasov_Mixail_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -49,7 +49,7 @@ TEST(Okunev_Boris_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
     EXPECT_NO_THROW(z + z1);
 }
 
-TEST(Okunev_Boris_ComplexNumberTest, Sum_Two_Complex_Correct) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -66,7 +66,7 @@ TEST(Okunev_Boris_ComplexNumberTest, Sum_Two_Complex_Correct) {
     EXPECT_EQ(expect, z + z1);
 }
 
-TEST(Okunev_Boris_ComplexNumberTest, Can_Set_Re) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Can_Set_Re) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -82,7 +82,7 @@ TEST(Okunev_Boris_ComplexNumberTest, Can_Set_Re) {
     EXPECT_EQ(expect, z);
 }
 
-TEST(Okunev_Boris_ComplexNumberTest, Can_Get_Im) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Can_Get_Im) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
