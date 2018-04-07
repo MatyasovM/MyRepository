@@ -56,11 +56,10 @@ TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     EXPECT_EQ(z1, z2);
 }
 
+TEST(ComplexNumberTest, Number_Is_Equal_To_Itself) {
+   // Arrange
+   ComplexNumber z(26.0, 14.0);
 
-TEST(Matyasov_Mixail_ComplexNumberTest, negative_and_positive_number_are_not_equal) {
-    // Arrange
-    ComplexNumber z(26.0, 14.0);
-
-    // Act & Assert
-    EXPECT_TRUE(z == z);
+   // Act & Assert
+   EXPECT_TRUE(z == z);
 }
