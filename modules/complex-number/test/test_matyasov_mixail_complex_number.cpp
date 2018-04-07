@@ -76,12 +76,10 @@ TEST(Matyasov_Mixail_ComplexNumberTest, numbers_are_not_equal_after_change_re) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
-    double newRe = 5.0;
-
+    
     // Act
     ComplexNumber z(re, im);
-    ComplexNumber z1(re, im);
-    z.setRe(newRe);
+    
     // Assert
-    EXPECT_NE(z,z1);
+    EXPECT_EQ(im, z.getIm());
 }
