@@ -52,21 +52,21 @@ TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     EXPECT_EQ(z , z2);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
+TEST(Matyasov_Mixail_ComplexNumberTest, can_right_plus_negative_numbers) {
     // Arrange
-    double re = 1.0;
-    double im = 2.0;
+    double re = -1.0;
+    double im = -2.0;
 
-    double re1 = 2.0;
-    double im1 = 3.0;
+    double re1 = -3.0;
+    double im1 = -4.0;
 
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re1, im1);
-    ComplexNumber expect(3, 5);
+    ComplexNumber result(-4.0, -6.0);
 
     // Assert
-    EXPECT_EQ(expect, z + z1);
+    EXPECT_EQ(result, z + z1);
 }
 
 TEST(Matyasov_Mixail_ComplexNumberTest, numbers_not_equal_after_set_Re) {
