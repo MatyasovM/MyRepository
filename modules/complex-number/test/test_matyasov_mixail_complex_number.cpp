@@ -10,34 +10,17 @@ TEST(Matyasov_Mixail_ComplexNumberTest, can_plus_two_number) {
     double im = 2.0;
     double resRe = 2.0;
     double resIm = 4.0;
-
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re, im);
-    ComplexNumber result(resRe, resIm);
+    ComplexNumber res(resRe, resIm);
     z = z + z1;
 
     // Assert
-    EXPECT_TRUE(z == result);
+    EXPECT_TRUE(z == res);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, two_opposite_number_are_not_equal) {
-    // Arrange
-    double re = 1.0;
-    double im = 2.0;
-
-    double re1 = 2.0;
-    double im1 = 1.0;
-
-    // Act
-    ComplexNumber z(re, im);
-    ComplexNumber z1(re1, im1);
-
-    // Assert
-    EXPECT_TRUE(z != z1);
-}
-
-TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
+TEST(Matyasov_Mixail_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -48,18 +31,68 @@ TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re1, im1);
-    ComplexNumber z2(re1, im1);
-    z1 = z1 - z;
-    z1 = z1 + z;
 
     // Assert
-    EXPECT_EQ(z1, z2);
+    EXPECT_FALSE(z == z1);
 }
 
-TEST(ComplexNumberTest, Number_Is_Equal_To_Itself) {
-   // Arrange
-   ComplexNumber z(26.0, 14.0);
+TEST(Matyasov_Mixail_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
+    // Arrange
+    double re = 1.0;
+    double im = 2.0;
 
-   // Act & Assert
-   EXPECT_TRUE(z == z);
+    double re1 = 2.0;
+    double im1 = 3.0;
+
+    // Act
+    ComplexNumber z(re, im);
+    ComplexNumber z1(re1, im1);
+
+    // Assert
+    EXPECT_NO_THROW(z + z1);
+}
+
+TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
+    // Arrange
+    double re = 1.0;
+    double im = 2.0;
+
+    double re1 = 2.0;
+    double im1 = 3.0;
+
+    // Act
+    ComplexNumber z(re, im);
+    ComplexNumber z1(re1, im1);
+    ComplexNumber expect(3, 5);
+
+    // Assert
+    EXPECT_EQ(expect, z + z1);
+}
+
+TEST(Matyasov_Mixail_ComplexNumberTest, Can_Set_Re) {
+    // Arrange
+    double re = 1.0;
+    double im = 2.0;
+
+    double re1 = 5;
+
+    // Act
+    ComplexNumber z(re, im);
+    z.setRe(re1);
+    ComplexNumber expect(re1, im);
+
+    // Assert
+    EXPECT_EQ(expect, z);
+}
+
+TEST(Matyasov_Mixail_ComplexNumberTest, Can_Get_Im) {
+    // Arrange
+    double re = 1.0;
+    double im = 2.0;
+
+    // Act
+    ComplexNumber z(re, im);
+
+    // Assert
+    EXPECT_EQ(im, z.getIm());
 }
