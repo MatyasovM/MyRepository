@@ -55,3 +55,19 @@ TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     // Assert
     EXPECT_EQ(z1, z2);
 }
+
+
+TEST(Matyasov_Mixail_ComplexNumberTest, negative_and_positive_number_are_not_equal) {
+    // Arrange
+    double re = 1.0;
+    double im = 2.0;
+    double re1 = -1.0;
+    double im1 = -2.0;
+
+    // Act
+    ComplexNumber z(re, im);
+    ComplexNumber z1(re1, im1);
+
+    // Assert
+    EXPECT_TRUE(z1 != z);
+}
