@@ -8,13 +8,16 @@ TEST(Matyasov_Mixail_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
+    double resRe = 2.0;
+    double resIm = 4.0;
 
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re, im);
+    ComplexNumber result(resRe, resIm);
 
     // Assert
-    EXPECT_TRUE(z == z1);
+    EXPECT_TRUE(z != result);
 }
 
 TEST(Matyasov_Mixail_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
