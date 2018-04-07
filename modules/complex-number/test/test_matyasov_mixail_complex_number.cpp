@@ -20,36 +20,36 @@ TEST(Matyasov_Mixail_ComplexNumberTest, can_plus_two_number) {
     EXPECT_TRUE(z == res);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
+TEST(Matyasov_Mixail_ComplexNumberTest, two_opposite_number_are_not_equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
 
     double re1 = 2.0;
-    double im1 = 3.0;
+    double im1 = 1.0;
 
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re1, im1);
 
     // Assert
-    EXPECT_FALSE(z == z1);
+    EXPECT_TRUE(z != z1);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
+TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
 
-    double re1 = 2.0;
-    double im1 = 3.0;
-
     // Act
     ComplexNumber z(re, im);
-    ComplexNumber z1(re1, im1);
+    ComplexNumber z1(re, im);
+    ComplexNumber z2(re, im);
+    z = z - z1;
+    z = z + z1;
 
     // Assert
-    EXPECT_NO_THROW(z + z1);
+    EXPECT_EQ(z , z2);
 }
 
 TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
