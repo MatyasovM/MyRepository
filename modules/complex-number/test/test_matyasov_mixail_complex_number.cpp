@@ -69,7 +69,7 @@ TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
     EXPECT_EQ(expect, z + z1);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Can_Set_Re) {
+TEST(Matyasov_Mixail_ComplexNumberTest, numbers_not_equal_after_set_Re) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -78,21 +78,23 @@ TEST(Matyasov_Mixail_ComplexNumberTest, Can_Set_Re) {
 
     // Act
     ComplexNumber z(re, im);
+    ComplexNumber z1(re, im);
     z.setRe(re1);
-    ComplexNumber expect(re1, im);
 
     // Assert
-    EXPECT_EQ(expect, z);
+    EXPECT_NE(z1, z);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Can_Get_Im) {
+TEST(Matyasov_Mixail_ComplexNumberTest, can_get_im) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
+    double im1 = 3.0;
 
     // Act
     ComplexNumber z(re, im);
+    z.setIm(im1);
 
     // Assert
-    EXPECT_EQ(im, z.getIm());
+    EXPECT_EQ(im1, z.getIm());
 }
