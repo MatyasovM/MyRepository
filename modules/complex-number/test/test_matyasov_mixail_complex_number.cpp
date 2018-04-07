@@ -71,15 +71,3 @@ TEST(Matyasov_Mixail_ComplexNumberTest, negative_and_positive_number_are_not_equ
     // Assert
     EXPECT_TRUE(z1 != z);
 }
-
-TEST(Matyasov_Mixail_ComplexNumberTest, numbers_are_not_equal_after_change_re) {
-    // Arrange
-    double re = 1.0;
-    double im = 2.0;
-    
-    // Act
-    ComplexNumber z(re, im);
-    
-    // Assert
-    EXPECT_EQ(im, z.getIm());
-}
