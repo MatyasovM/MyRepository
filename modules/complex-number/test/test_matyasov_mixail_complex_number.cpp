@@ -4,7 +4,7 @@
 
 #include "include/complex_number.h"
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
+TEST(Matyasov_Mixail_ComplexNumberTest, can_plus_two_number) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -21,23 +21,23 @@ TEST(Matyasov_Mixail_ComplexNumberTest, Two_Same_Complex_Are_Equal) {
     EXPECT_TRUE(z == result);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, Two_Different_Complex_Are_Not_Equal) {
+TEST(Matyasov_Mixail_ComplexNumberTest, two_opposite_number_are_not_equal) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
 
     double re1 = 2.0;
-    double im1 = 3.0;
+    double im1 = 1.0;
 
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re1, im1);
 
     // Assert
-    EXPECT_FALSE(z == z1);
+    EXPECT_TRUE(z != z1);
 }
 
-TEST(Matyasov_Mixail_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
+TEST(Matyasov_Mixail_ComplexNumberTest, sum_equal_difference) {
     // Arrange
     double re = 1.0;
     double im = 2.0;
@@ -48,9 +48,12 @@ TEST(Matyasov_Mixail_ComplexNumberTest, No_Throw_Sum_Two_Complex) {
     // Act
     ComplexNumber z(re, im);
     ComplexNumber z1(re1, im1);
+    ComplexNumber z2(re1, im1);
+    z1 = z1 - z;
+    z1 = z1 + z;
 
     // Assert
-    EXPECT_NO_THROW(z + z1);
+    EXPECT_EQ(z1, z2);
 }
 
 TEST(Matyasov_Mixail_ComplexNumberTest, Sum_Two_Complex_Correct) {
